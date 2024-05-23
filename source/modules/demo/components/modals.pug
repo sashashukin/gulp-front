@@ -1,0 +1,47 @@
+include ../../button/button
+include ../../modal/modal
+include ../../video/video
+include ../../dialog/dialog
+
+
+.demo.demo_buttons
+	+button(
+		style="solid rounded" 
+		color="blue" 
+		data-micromodal-trigger="modal-alert" 
+	) Open alert dialog
+	+button(
+		style="solid rounded" 
+		color="blue" 
+		data-micromodal-trigger="modal-responsive" 
+	) Open responsive dialog
+
++modal(id="modal-alert")
+	+dialog(
+		id="dialog-alert" 
+		title="Get this party started?"
+	)
+		main.dialog__content
+			p Lorem ipsum dolor sit amet, consectetur adipisicing elit unde sint debitis in magnam vel pariatur libero nisi minima.
+
+		footer.dialog__footer
+			+button(
+				style="text rounded"
+				color="indigo"
+				aria-label="Close this dialog window"
+				data-micromodal-close 
+			) Decline
+			+button(
+				style="text rounded"
+				color="indigo"
+			) Accept
+
+
++modal(id="modal-responsive")
+	+dialog(
+		id="dialog-responsive" 
+		title="Rick Astley - Never Gonna Give You Up (Official Music Video)"
+		style="default responsive"
+	)
+		main.dialog__content
+			+video(videoId="dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)")

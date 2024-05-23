@@ -1,0 +1,14 @@
+/*
+ * Size mixin
+ * e.g size: 20px 10px => width: 20px; height: 10px
+ */
+size(values...)
+	if length(values) == 1
+		width values[0] || auto
+		height values[0] || auto
+	else
+		if values[0] != false
+			width values[0]
+
+		if values[1] != false
+			height values[1]

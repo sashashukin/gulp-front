@@ -1,0 +1,51 @@
+-
+	function getInitials(name) {
+		const names = name.split(' ');
+		let initials = names[0].substring(0, 1).toUpperCase();
+
+		if (names.length > 1) {
+			initials += names[names.length - 1].substring(0, 1).toUpperCase();
+		}
+
+		return initials;
+	}
+
+mixin avatar(data)
+	-
+		const {
+			color = "blue",
+			size = "medium",
+			style = "circle",
+			image,
+			title,
+			baseClass = "avatar"
+		} = attributes;
+
+		const otherAttrs = _.omit(
+			["color", "size", "style", "image", "title", "baseClass"],
+			attributes
+		);
+
+		const stringToArray = str => str
+			? str.split(" ").filter(v => v.length) 
+			: [];
+
+		const styles = stringToArray(style)
+			.map(s => `${baseClass}_style_${s}`)
+
+		const classes = _.classNames(
+			[
+				baseClass,
+				{
+					[`${baseClass}_color_${color}`]: color,
+					[`${baseClass}_size_${size}`]: size
+				}
+			].concat(styles)
+		);
+
+
+	.avatar&attributes(otherAttrs)(class=classes title=title)
+		if image
+			img(src=image alt=title).avatar__image
+		if title
+			.avatar__initials= getInitials(title)

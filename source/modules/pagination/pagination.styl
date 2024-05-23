@@ -1,0 +1,64 @@
+.pagination
+	&__list
+		display flex
+		flex-wrap wrap
+		margin 0
+		padding 0
+
+	&__item
+		padding 0
+		color #999
+		list-style none
+		text-align center
+		line-height normal
+
+	&__item_current
+		color #111
+
+	&__link
+	&__text
+		padding em(10px)
+		min-width em(20px)
+
+	&__link
+		&
+		&:visited
+			display inline-block
+			color currentColor
+			text-decoration none
+			transition 125ms color ease-in-out
+
+		&:hover
+		&:focus
+		&:active
+			color #111
+
+	&_block
+		& ^[0]__list
+			justify-content space-between
+
+	&_centred
+		& ^[0]__item
+			&:nth-child(3)
+				margin-right auto
+
+			&:nth-last-child(3)
+				margin-left auto
+
+	&_aligin_left
+		text-align left
+
+		& ^[0]__list
+			justify-content flex-start
+
+	&_aligin_center
+		text-align center
+
+		& ^[0]__list
+			justify-content center
+
+	&_aligin_right
+		text-align right
+
+		& ^[0]__list
+			justify-content flex-end

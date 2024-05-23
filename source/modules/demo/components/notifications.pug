@@ -1,0 +1,141 @@
+include ../../button/button
+
+.demo.demo_buttons
+	+button(
+		style="solid rounded" 
+		color="gray" 
+	).js-notification-info info
+	+button(
+		style="solid rounded" 
+		color="blue" 
+	).js-notification-notice notice
+	+button(
+		style="solid rounded" 
+		color="green" 
+	).js-notification-success success
+	+button(
+		style="solid rounded" 
+		color="red" 
+	).js-notification-error error
+	+button(
+		style="solid rounded" 
+		color="yellow" 
+	).js-notification-warning warning
+
+h4 Example
+ul
+	li Create notification board
+		pre
+			code.
+				const notificationBoard = new Notification({
+					delay: 40000
+				});
+
+	li Create and show notification message
+		pre
+			code.
+				const button = document.querySelector("button");
+				button.addEventListener("click", () => {
+					notificationBoard.show("Short test message", {
+						className: "notification_type_info"
+					});
+				});
+
+h4 Options
+h5 Notification
+ul
+	li
+		b delay
+		br
+		| Delay for closing event in milliseconds (ms).
+		ul
+			li Type:
+				i number
+			li Default:
+				i 3000
+	li
+		b containerClassName
+		br
+		| Notification board container class name
+		ul
+			li Type:
+				i string
+			li Default:
+				i "notification-container"
+	li
+		b containerItemClassName
+		br
+		| Notification board container item class name
+		ul
+			li Type:
+				i string
+			li Default:
+				i "notification-container__item"
+
+h5 NotificationItem
+ul
+	li
+		b delay
+		br
+		| Delay for closing event in milliseconds (ms).
+		ul
+			li Type:
+				i number
+			li Default:
+				i 3000
+	li
+		b close
+		br
+		| Show close button when true
+		ul
+			li Type:
+				i bollean
+			li Default:
+				i true
+	li
+		b className
+		br
+		| Custom class/classes name added to notification item
+		ul
+			li Type:
+				i string
+			li Default:
+				i ""
+	li
+		b containerClassName
+		br
+		| Notificiation item container class name
+		ul
+			li Type:
+				i string
+			li Default:
+				i "notification"
+	li
+		b disappearClassName
+		br
+		| Class name added when notification disappear
+		ul
+			li Type:
+				i string
+			li Default:
+				i "notification_disappear"
+	li
+		b closeClassName
+		br
+		| Class name to close button
+		ul
+			li Type:
+				i string
+			li Default:
+				i "notification__close"
+	li
+		b messageClassName
+		br
+		| Class name added to message
+		ul
+			li Type:
+				i string
+			li Default:
+				i "notification__message"
+
+

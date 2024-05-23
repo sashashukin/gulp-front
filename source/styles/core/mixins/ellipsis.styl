@@ -1,0 +1,11 @@
+ellipsis()
+	overflow hidden
+	text-overflow ellipsis
+	white-space nowrap
+
+// overflow ellipsis
+overflow(value)
+	if (value == ellipsis)
+		ellipsis()
+	else
+		overflow value

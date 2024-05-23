@@ -1,0 +1,99 @@
+include ../../tooltip/tooltip
+
+style
+	:stylus
+		.tooltip-content
+			
+			&__title
+				margin 0 0 8px
+				font-size 16px
+
+			&__text
+				text-align left
+				
+			&__controls
+				text-align right
+
+
++tooltip()#tooltip-demo__id-1
+	.tooltip-content
+		h3.tooltip-content__title Any HTML
+		.tooltip-content__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam earum, similique nam repellendus nisi atque nesciunt non tempora labore ad dolorem eligendi dicta. Distinctio maiores deserunt officia eaque dolorem nam!
+
+
++button(
+	style="solid rounded"
+	color="blue"
+	size="medium"
+	data-tooltip="Tooltip text"
+) From attribute
+
+
+h3 Placements
++button(
+	style="solid rounded"
+	color="blue"
+	size="medium"
+	data-tooltip="Tooltip text"
+	data-tooltip-placement="right"
+) Placement right
+| &nbsp;&nbsp;
++button(
+	style="solid rounded"
+	color="blue"
+	size="medium"
+	data-tooltip="Tooltip text"
+	data-tooltip-placement="left"
+) Placement left
+| &nbsp;&nbsp;
++button(
+	style="solid rounded"
+	color="blue"
+	size="medium"
+	data-tooltip="Tooltip text"
+	data-tooltip-placement="top"
+) Placement top
+| &nbsp;&nbsp;
++button(
+	style="solid rounded"
+	color="blue"
+	size="medium"
+	data-tooltip="Tooltip text"
+	data-tooltip-placement="bottom"
+) Placement bottom
+
+
+h3 Themes
++button(
+	style="solid rounded"
+	color="blue"
+	size="medium"
+	data-tooltip="Tooltip text"
+	data-tooltip-style="default light"
+) Light theme
+| &nbsp;&nbsp;
++button(
+	style="solid rounded"
+	color="blue"
+	size="medium"
+	data-tooltip="Tooltip text"
+	data-tooltip-style="default dark"
+) Dark theme
+
+h3 Custom events
++button(
+	style="solid rounded"
+	color="blue"
+	size="medium"
+	data-tooltip="Tooltip text"
+	data-tooltip-trigger="focus"
+) On focus
+
+h3 HTML content
++button(
+	style="solid rounded"
+	color="blue"
+	size="medium"
+	data-tooltip=""
+	data-tooltip-selector="#tooltip-demo__id-1"
+) HTML content

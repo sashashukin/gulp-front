@@ -1,0 +1,40 @@
+include ../../dropdown/dropdown
+include ../../dropdown-list/dropdown-list
+
+
+-
+	const fruits = [
+		{ "value": "1", "label": "Apple" },
+		{ "value": "2", "label": "Avocado" },
+		{ "value": "3", "label": "Banana" },
+		{ "value": "5", "label": "Lemon" },
+		{ "value": "6", "label": "Pear" },
+	];
+
+	const berries = [
+		{ "value": "1", "label": "Cherries" },
+		{ "value": "2", "label": "Blueberry" },
+		{ "value": "3", "label": "Cranberry" },
+		{ "value": "4", "label": "Cherries" },
+		{ "value": "5", "label": "Strawberry" }
+	];
+
+	const vegetables = [
+		{ "value": "1", "label": "Broccoli" },
+		{ "value": "2", "label": "Potato" },
+		{ "value": "3", "label": "Radish" },
+		{ "value": "4", "label": "Onion" },
+		{ "value": "5", "label": "Carrot" },
+	];
+
++dropdown(trigger-text="Fruits")
+	+dropdown-list(fruits)
+
++dropdown(trigger-text="Berries")
+	+dropdown-list(berries)
+
++dropdown(trigger-text="Vegetables")
+	+dropdown-list(vegetables)
+
++dropdown(trigger-text="Disabled Dropdown" disabled)
+	+dropdown-list(fruits)

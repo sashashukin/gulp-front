@@ -1,0 +1,38 @@
+.main-menu-submenu
+	overflow-y auto
+	max-height 70vh
+
+	&__list
+		margin 0
+		padding 0
+
+	&__item
+		padding 0
+		background none
+		list-style none
+
+	&__link
+		&
+		&:visited
+			display block
+			padding em(8px) 1em
+			color $gray-9
+			text-decoration none
+			font-size em(14px)
+			transition 125ms ease
+			transition-property color, background-color
+			will-change color, background-color
+
+		&:hover
+		&:focus
+			background $blue-6
+			color #fff
+
+		&:active
+			box-shadow inset 0 3px 5px rgba(0, 0, 0, 0.125)
+
+	&__item_active &__link
+		&
+		&:visited
+			background $blue-6
+			color #fff

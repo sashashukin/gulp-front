@@ -1,0 +1,157 @@
+.tabs
+	&__header
+		overflow-x auto
+		overflow-y hidden
+		white-space nowrap
+		user-select none
+		-ms-overflow-style -ms-autohiding-scrollbar
+		-webkit-overflow-scrolling touch
+
+		&::-webkit-scrollbar
+			display none
+
+	&__body
+		z-index 2
+
+	&__tab
+		margin 0
+		padding 0
+		border none
+		background transparent
+		text-align center
+		cursor pointer
+		user-select none
+
+	&__tab
+		&[aria-selected="true"]
+			cursor default
+
+		&[disabled]
+			opacity 0.6
+			pointer-events none
+
+	&__preloader
+		position relative
+
+	&__panel
+		position relative
+		display none
+
+	&__panel[aria-hidden="false"]
+		display block
+
+	&_style_default
+		& ^[0]__header
+			position relative
+			display flex
+			border-bottom 1px solid #e5e5e5
+
+		& [data-tabs-active-bar]
+			position absolute
+			bottom 0
+			left 0
+			z-index 10
+			display block
+			height 2px
+			transition 200ms left ease
+
+		& ^[0]__body
+			// 
+
+		& ^[0]__tab
+			position relative
+			z-index 1
+			padding em(12px) em(20px)
+			outline none
+			border-width 0 0 2px 0
+			border-style solid
+			border-color transparent
+			color $gray-5
+			text-align center
+			text-transform uppercase
+			transition color 0.1s ease-in-out
+
+		& ^[0]__tab[aria-selected="true"]
+			// 
+
+		& ^[0]__preloader
+			height 80px
+			background url("../images/tabs/preloader.svg") no-repeat 50% 20px
+			background-size 30px
+
+		& ^[0]__panel[aria-hidden="false"]
+			margin em(20px)
+
+	tabs-color(color)
+		& [data-tabs-active-bar]
+			background color
+
+		& ^[0]__tab
+			&[aria-selected="true"]
+				color color
+
+	// Colors
+	&_color_gray
+		tabs-color($gray-6)
+
+	&_color_black
+		tabs-color($gray-8)
+
+	&_color_red
+		tabs-color($red-5)
+
+	&_color_pink
+		tabs-color($pink-5)
+
+	&_color_grape
+		tabs-color($grape-5)
+
+	&_color_violet
+		tabs-color($violet-5)
+
+	&_color_indigo
+		tabs-color($indigo-5)
+
+	&_color_blue
+		tabs-color($blue-5)
+
+	&_color_cyan
+		tabs-color($cyan-5)
+
+	&_color_teal
+		tabs-color($teal-5)
+
+	&_color_green
+		tabs-color($green-5)
+
+	&_color_lime
+		tabs-color($lime-5)
+
+	&_color_yellow
+		tabs-color($yellow-5)
+
+	&_color_orange
+		tabs-color($orange-5)
+
+	&_aligin_left
+		& ^[0]__header
+			// justify-content flex-start
+
+	&_aligin_right
+		& ^[0]__tab
+			&:first-child
+				margin-left auto
+
+	&_aligin_center
+		& ^[0]__tab
+			&:first-child
+				margin-left auto
+
+			&:last-child
+				margin-right auto
+
+	&_expanded
+		& ^[0]__tab
+			flex 1
+			flex-basis 1px
+			min-width 0

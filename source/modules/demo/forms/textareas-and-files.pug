@@ -1,0 +1,51 @@
+include ../../form-item/form-item
+include ../../label/label
+include ../../textarea/textarea
+include ../../file/file
+
++form-item(
+	label="Inline Textarea"
+	for="form-demo__textarea-inline"
+).form__item
+	+textarea(
+		id="form-demo__textarea-inline" 
+		name="form-demo__textarea-inline" 
+		placeholder="Enter message"
+	)
+
+
++form-item(
+	label="Full width Textarea"
+	for="form-demo__textarea-block"
+).form__item
+	+textarea(
+		id="form-demo__textarea-block" 
+		name="form-demo__textarea-block" 
+		placeholder="Enter message"
+		block
+	)
+
+
++form-item(
+	label="File"
+	for="form-demo__file"
+).form__item
+	+file(
+		name="form-demo__file" 
+		id="form-demo__file" 
+		multiple
+	)
+
+
++form-item(
+	label="File compact style"
+	for="form-demo__file-compact"
+).form__item
+	+file(
+		type="text" 
+		name="form-demo__file-compact" 
+		id="form-demo__file-compact"
+		style="default compact"
+		multiple
+	)
+

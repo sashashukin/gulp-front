@@ -1,0 +1,51 @@
+mixin button()
+	-
+		let buttonTag = "button";
+
+		const {
+			color,
+			to,
+			size,
+			style,
+			icon,
+			block: blockAttr,
+			disabled: disabledAttr,
+			baseClassName = "button"
+		} = attributes;
+
+		const otherAttrs = _.omit(
+			["color", "to", "size", "style", "icon", "block"],
+			attributes
+		);
+
+		const stringToArray = str => str
+			? str.split(" ").filter(v => v.length) 
+			: [];
+
+		const styles = stringToArray(style)
+			.map(s => `${baseClassName}_style_${s}`)
+
+		const classes = _.classNames(
+			[
+				baseClassName,
+				{
+					[`${baseClassName}_block`]: blockAttr,
+					[`${baseClassName}_icon`]: icon,
+					[`${baseClassName}_color_${color}`]: color,
+					[`${baseClassName}_size_${size}`]: size,
+					[`${baseClassName}_disabled`]: disabledAttr,
+				}
+			].concat(styles)
+		);
+
+		if (to) {
+			buttonTag = "a";
+			otherAttrs.href = to;
+		}
+		else {
+			otherAttrs.type = attributes.type || "button";
+		}
+
+
+	#{buttonTag}(class=classes)&attributes(otherAttrs)
+		block

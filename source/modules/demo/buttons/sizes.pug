@@ -1,0 +1,8 @@
+include ../../button/button
+
+each size in ["small", "medium", "large", "xl", "xxl"]
+	+button(
+		size=size
+		style="solid rounded"
+		color="indigo"
+	)= size

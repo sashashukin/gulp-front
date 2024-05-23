@@ -1,0 +1,22 @@
+include ../main-menu-submenu/main-menu-submenu
+
+mixin main-menu(data)
+	nav.main-menu&attributes(attributes)
+		ul.main-menu__list
+			each item in data
+				- var itemClasses = ['main-menu__item']
+
+				if item.submenu
+					- itemClasses.push(itemClasses[0] + '_dropdown')
+
+				li(class=itemClasses)
+					if item.url
+						a(href=`${item.url}.html`).main-menu__link= item.title
+					else
+						span.main-menu__link= item.title
+
+					if item.submenu
+						- item.submenu.parent = item.url
+						.main-menu__submenu
+							+main-menu-submenu(item.submenu)
+

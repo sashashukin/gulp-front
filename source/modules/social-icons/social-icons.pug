@@ -1,0 +1,10 @@
+include ../icon/icon
+
+mixin social-icons(data)
+	ul.social-icons&attributes(attributes)
+		each item in data
+			li(class=`social-icons__item social-icons__item_${item.name}`)
+				a(href="#").social-icons__link
+					span.social-icons__icon
+						+icon(name=item.icon title=item.label)
+					span.social-icons__label= item.label

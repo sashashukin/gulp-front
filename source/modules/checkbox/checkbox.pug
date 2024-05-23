@@ -1,0 +1,6 @@
+include ../switch/switch
+
+mixin checkbox()
+	- delete attributes.type;
+	+switch(type="checkbox")&attributes(attributes)
+		block

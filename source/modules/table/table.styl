@@ -1,0 +1,165 @@
+$table-border-color = $gray-4
+$table-stripe-color = $gray-0
+$table-font-color = $gray-9
+$table-head-font-color = $gray-6
+
+.table
+	margin $base-line-height 0
+	width 100%
+	border-spacing 0
+	border-collapse collapse
+	color $table-font-color
+	empty-cells show
+
+	caption
+		padding 1em 0
+		color inherit
+		text-align center
+		font-style italic
+		font-size 90%
+
+	td
+	th
+		overflow visible
+		margin 0
+		padding em(16px) em(12px)
+		border-width 0
+		border-style solid
+		border-color $table-border-color
+		font-weight normal
+		font-size inherit
+
+	thead
+	tfoot
+		vertical-align bottom
+		text-align left
+
+		td
+		th
+			color $table-head-font-color
+			font-weight normal
+
+	td
+		background-color transparent
+
+	&_striped
+		tr:nth-child(2n-1)
+			td
+				background-color $table-stripe-color
+
+	// All cels bordered
+	&_bordered
+		border 1px solid $table-border-color
+
+		th
+		td
+			border 1px solid $table-border-color
+
+	&_horizontal
+		td
+		th
+			border-width 0 0 1px 0
+			border-bottom 1px solid $table-border-color
+
+		tfoot
+			td
+			th
+				border-bottom none
+
+	&_vertical
+		td
+		th
+			border-width 0 0 0 1px
+
+			&:first-child
+				border-left-width 0
+
+	&_header-dividers
+		thead
+			td
+			th
+				border-bottom-width 1px
+
+		tfoot
+			td
+			th
+				border-top-width 1px
+
+	&_hoverable
+		tbody
+			tr
+				transition 300ms all ease
+
+				&:hover
+					background-color #ffd
+
+	&_contained
+		border 1px solid $table-border-color
+
+	&_compressed
+		td
+		th
+			padding em(8px) em(12px)
+
+	&_expanded
+		td
+		th
+			padding em(24px) em(16px)
+
+	&_justified
+		tbody
+		thead
+		tfoot
+			td
+			th
+				&:first-child
+					padding-left 0
+
+				&:last-child
+					padding-right 0
+
+	// Responsive tables
+	&_responsive
+		+below($media-screen-tablet)
+			&^[0]_justified
+				tbody
+					td
+						padding-right 0
+						padding-left 0
+
+			thead
+			tfoot
+				display none
+
+			caption
+				display block
+
+			tbody
+				tr
+					border-bottom 1px solid $table-border-color
+
+					&:hover
+						background-color transparent
+
+					&:first-child
+						border-top 1px solid $table-border-color
+
+				td
+					display block
+					border none
+					vertical-align top
+
+					&:before
+						display block
+						content attr(data-th) ": "
+						font-weight bold
+
+					& ^[0]__content
+						display block
+						vertical-align top
+
+					&:first-child
+						padding-top 1.5em
+
+					&:last-child
+						padding-bottom 1.5em

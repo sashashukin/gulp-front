@@ -1,0 +1,85 @@
+.select
+	position relative
+
+	&:after
+		position absolute
+		z-index 1
+		display block
+		content ""
+
+	&__control
+		box-sizing border-box
+
+	&__placeholder
+		height 0
+		outline none
+		border none
+
+	&_multiple &__control
+		padding 0 !important
+		height auto !important
+
+	&_multiple &__placeholder
+		display none
+		visibility hidden
+		opacity 0
+
+	&_multiple:after
+		content none !important
+
+	&_multiple
+		option
+			padding 0.5em
+
+	&_block
+		display block
+
+	&_block &__control
+		width 100% !important
+
+	&_inline &__control
+		width $form-input-width-inline
+
+	&_style_default
+		& ^[0]__placeholder
+			color $form-color-placeholder
+
+			+below(640px)
+				display none
+
+		&::after
+			top 50%
+			right 15px
+			margin-top -4px
+			size 5px
+			border-width 0 1px 1px 0
+			border-style solid
+			border-color #4a4a4a
+			transform rotate(45deg)
+			transform-origin 75% 75%
+
+		& ^[0]__control
+			padding 0 ($form-padding_horizontal * 3) 0 $form-padding_horizontal
+			min-height $form-size-input-height
+			height $form-size-input-height
+			border $form-border_default
+			border-radius $form-border-radius
+			background-color $form-color-background
+			color $form-color-font
+			font-size $form-font-size
+
+			+placeholder()
+				color $form-color-placeholder
+
+			&:focus
+				outline none
+				focus($form-color-border_focus)
+
+			&:invalid
+				border-color $form-color-border_invalid
+
+				&:focus
+					focus($form-color-border_invalid)
+
+			&:disabled
+				background-color $form-color-background_disabled

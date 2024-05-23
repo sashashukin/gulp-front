@@ -1,0 +1,27 @@
+.button-group
+	display flex
+
+	&__item
+		margin 0 !important
+
+		&:nth-child(n+2):nth-last-child(n+2)
+			margin-left -1px !important
+			border-radius 0
+
+		&:first-child
+			border-top-right-radius 0
+			border-bottom-right-radius 0
+
+		&:last-child
+			margin-left -1px !important
+			border-top-left-radius 0
+			border-bottom-left-radius 0
+
+	&_full-width
+		display table
+		width 100%
+		table-layout fixed
+
+	&_full-width &__item
+		display table-cell
+		width 100%

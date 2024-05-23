@@ -1,0 +1,13 @@
+extends ../layouts/default
+
+include ../modules/_index/index
+
+block head
+	- title = "Pages list"
+
+	style
+		:stylus
+			@import "../modules/_index/_index.styl"
+
+block page
+	+index(index)

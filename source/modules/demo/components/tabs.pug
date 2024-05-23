@@ -1,0 +1,90 @@
+include ../../tabs/tabs
+include ../../icon/icon
+
+
+h3 Colors
+-
+	const tabsItems = [
+		{ id: "icon", label: "Icon", icon: "heart" },
+		{ id: "tab2", label: "Tab 2" },
+		{ id: "tab3", label: "Tab 3" },
+		{ id: "disabled", label: "Disabled tab", disabled: true, icon: "maginifer" }
+	];
+
+	const tabsItemsExpanded = [
+		{ "id": "apple", "label": "Apple" },
+		{ "id": "avocado", "label": "Avocado" },
+		{ "id": "banana", "label": "Banana" },
+		{ "id": "lemon", "label": "Lemon" },
+		{ "id": "pear", "label": "Pear" },
+		{ "id": "cherries", "label": "Cherries" },
+		{ "id": "blueberry", "label": "Blueberry" },
+		{ "id": "cranberry", "label": "Cranberry" },
+		{ "id": "cherries", "label": "Cherries" },
+		{ "id": "strawberry", "label": "Strawberry" },
+		{ "id": "broccoli", "label": "Broccoli" },
+		{ "id": "potato", "label": "Potato" },
+		{ "id": "radish", "label": "Radish" },
+		{ "id": "onion", "label": "Onion" },
+		{ "id": "carrot", "label": "Carrot" }
+	];
+
+each color, index in ["gray", "black", "red", "pink", "grape", "violet", "indigo", "blue", "cyan", "teal", "green", "lime", "yellow", "orange"]
+
+	+tabs(name=`tabs-color-${index + 1}` color=color)
+		each item in tabsItems
+			+tabs__item(item)
+				ul
+					li
+						b Name: 
+						= item.label
+					li
+						b Color: 
+						= color
+					li
+						b Style:
+						|   default
+
+
+
+h3 Aligin
+each aligin, index in ["left", "center", "right"]
+	+tabs(name=`tabs-aligin-${index + 1}` color="indigo" aligin=aligin)
+		each item in tabsItems
+			+tabs__item(item)
+				ul
+					li
+						b Name: 
+						|  icon
+					li
+						b Color: 
+						|  indigo
+					li
+						b Aligin: 
+						= aligin
+					li
+						b Style: 
+						|  default
+	
+
+h3 Expanded
++tabs(name="tabs-expanded" color="indigo" expanded)
+	each item in tabsItems
+		+tabs__item(item)
+			ul
+				li 
+					b Name: 
+					= item.label
+				li
+					b Color: 
+					|  indigo
+				li
+					b Style: 
+					|  default
+
+
+h3 Scrollable
++tabs(name="tabs-scrollable" color="indigo")
+	each item in tabsItemsExpanded
+		+tabs__item(item)
+			p= item.label

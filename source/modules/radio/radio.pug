@@ -1,0 +1,6 @@
+include ../switch/switch
+
+mixin radio()
+	- delete attributes.type;
+	+switch(type="radio")&attributes(attributes)
+		block

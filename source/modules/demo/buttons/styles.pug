@@ -1,0 +1,36 @@
+include ../../button/button
+
+-
+	const capitalize = str => str.replace(/^\w/, c => c.toUpperCase());
+
+h3 Colors
+each color in ["white", "gray", "black", "red", "pink", "grape", "violet", "indigo", "blue", "cyan", "teal", "green", "lime", "yellow", "orange" ]
+	+button(size="normal" style="solid rounded" color=color)= capitalize(color)
+
+
+h3 Styles
++button(size="normal" style="solid rounded" color="indigo") Solid
++button(size="normal" style="ghost rounded" color="indigo") Outlined
++button(size="normal" style="gradient rounded" color="indigo") Gradient
++button(size="normal" style="text rounded" color="indigo") Text
+
+h3 Shape
++button(size="normal" style="solid" color="indigo") Square
++button(size="normal" style="solid rounded" color="indigo") Rounded
++button(size="normal" style="solid pill" color="indigo") Pill
+
+br
++button(size="normal" style="ghost" color="indigo") Square
++button(size="normal" style="ghost rounded" color="indigo") Rounded
++button(size="normal" style="ghost pill" color="indigo") Pill
+
+br
++button(size="normal" style="gradient" color="indigo") Square
++button(size="normal" style="gradient rounded" color="indigo") Rounded
++button(size="normal" style="gradient pill" color="indigo") Pill
+
+br
++button(size="normal" style="text" color="indigo") Square
++button(size="normal" style="text rounded" color="indigo") Rounded
++button(size="normal" style="text pill" color="indigo") Pill
+

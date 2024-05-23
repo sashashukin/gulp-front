@@ -1,0 +1,13 @@
+include ../../form-item/form-item
+include ../../captcha/captcha
+
++form-item(
+	label="Captcha"
+	for="form-demo__captcha"
+).form-item_captcha.form__item
+	+captcha(
+		type="text"
+		name="form-demo__captcha"
+		id="form-demo__captcha"
+		placeholder="Enter text from image"
+	)

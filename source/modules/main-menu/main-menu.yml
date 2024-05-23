@@ -1,0 +1,183 @@
+---
+  mainMenu:
+    default:
+      -
+        title: Typography
+        url: typography
+        submenu:
+          -
+            title: Titles & Paragraphs
+            hash: titles-and-paragraphs
+          -
+            title: Lists
+            hash: lists
+          -
+            title: Quotes
+            hash: quotes
+          -
+            title: Description lists
+            hash: description-lists
+          -
+            title: Code
+            hash: code
+          -
+            title: Tables
+            hash: tables
+          -
+            title: Text level elements
+            hash: text-elements
+      -
+        title: Forms
+        url: forms
+        submenu:
+          -
+            title: Messaging
+            hash: messaging
+          -
+            title: Text Inputs
+            hash: text-inputs
+          -
+            title: Radios and Checkboxes
+            hash: radios-and-checkboxes
+          -
+            title: Input range
+            hash: input-range
+          -
+            title: Selects
+            hash: selects
+          -
+            title: Textareas and Files
+            hash: textareas-and-files
+          -
+            title: Captcha
+            hash: captcha
+      -
+        title: Buttons
+        url: buttons
+        submenu:
+          -
+            title: Styles
+            hash: buttons-styles
+          -
+            title: Sizes
+            hash: buttons-sizes
+          -
+            title: Icon buttons
+            hash: buttons-icon
+          -
+            title: Tags types
+            hash: buttons-tags
+          -
+            title: Disabled buttons
+            hash: buttons-disabled
+          -
+            title: Block buttons
+            hash: buttons-block
+          -
+            title: Buttons group
+            hash: buttons-group
+      -
+        title: Components
+        url: components
+        submenu:
+          -
+            title: Breadcrumbs
+            hash: breadcrumbs
+          -
+            title: Pagination
+            hash: pagination
+          -
+            title: Badges
+            hash: badges
+          -
+            title: Progress Bar
+            hash: progress-bar
+          -
+            title: Star raiting
+            hash: star-rating
+          -
+            title: Responsive video
+            hash: embed
+          -
+            title: Social icons
+            hash: social-icons
+          -
+            title: Tabs
+            hash: tabs
+          -
+            title: Modal windows
+            hash: modals
+          -
+            title: Accordion
+            hash: accordion
+          -
+            title: Dropdown
+            hash: dropdown
+          -
+            title: Spoiler
+            hash: spoiler
+          -
+            title: Tooltips
+            hash: tooltips
+          -
+            title: Notifications
+            hash: notifications
+          -
+            title: Svg Icons
+            hash: svg-icons
+          -
+            title: Avatars
+            hash: avatars
+          -
+            title: Media object
+            hash: media-object
+          -
+            title: Spinner
+            hash: spinner
+          -
+            title: Card
+            hash: card
+      -
+        title: Documentation
+        url: docs
+        submenu:
+          -
+            title: FAQ
+            url: faq
+          -
+            title: Quickstart
+            hash: quickstart
+          -
+            title: Development
+            hash: development
+          -
+            title: Building and Deploying
+            hash: building-and-deploying
+          -
+            title: Structure
+            hash: structure
+          -
+            title: CSS
+            hash: css
+          -
+            title: HTML
+            hash: html
+          -
+            title: JavaScript
+            hash: javascript
+          -
+            title: PNG Sprites
+            hash: png-sprites
+          -
+            title: SVG Symbol Sprites
+            hash: svg-symbol-sprites
+          -
+            title: DATA
+            hash: data
+          -
+            title: Command Line Commands
+            hash: command-line-commands
+          -
+            title: License
+            hash: license
+

@@ -1,0 +1,47 @@
+.header-presentation
+	padding-top 4em
+	padding-bottom 4em
+	background linear-gradient(to bottom, #D5DEE7 0%, #E8EBF2 50%, #E2E7ED 100%), linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 50%, rgba(255, 255, 255, 0.02) 61%, rgba(0, 0, 0, 0.02) 73%), linear-gradient(33deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%)
+	text-align center
+	font-weight 300
+	transform translateZ(0)
+	will-change opacity, transform
+	background-blend-mode normal, color-burn
+
+	+below($content-width)
+		m-padding()
+
+	&__name
+		margin 0
+		padding-bottom 20px
+		font-weight normal
+		font-weight 100
+		font-size 60px
+
+		+below(375px)
+			font-size 40px
+
+	&__description
+		margin 0
+		padding-bottom 8px
+		font-weight inherit
+		font-size em(18px)
+
+	&__try-now
+		// 
+
+	&__version
+		padding-bottom 8px
+		font-size 18px
+
+	&__sub-description
+		padding-bottom 60px
+		font-size 14px
+
+	&__download
+		margin auto
+		width 230px
+		font-weight 300
+
+		+print()
+			display none

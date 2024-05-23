@@ -1,0 +1,53 @@
+.logo
+	&
+	&:visited
+		display flex
+		align-items center
+		text-decoration none
+		line-height 1
+
+	&:hover &__icon
+		animation heartbeat 2.5s infinite
+
+		+below(750px)
+			animation none
+
+	&__name
+		margin-left em(8px)
+		color $blue-6
+		letter-spacing em(1px)
+		font-weight 300
+		font-size em(22px)
+
+		+below($media-screen-desktop)
+			display none
+
+		+below($media-screen-tablet)
+			display block
+
+	&__icon
+		size 27px
+		color $red-6
+
+		+below(750px)
+			animation heartbeat 2.5s infinite 5s
+
+// animation heartbeat 2.5s infinite
+@keyframes heartbeat
+	0%
+		transform scale(1)
+
+	5%
+		transform scale(1.3)
+
+	10%
+		transform scale(1.1)
+
+	15%
+		transform scale(1.4)
+
+	50%
+		transform scale(1)
+
+	100%
+		transform scale(1)

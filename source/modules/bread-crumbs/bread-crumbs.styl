@@ -1,0 +1,38 @@
+.bread-crumbs
+	&__list
+		margin 0
+		padding 0
+
+	&__item
+		list-style none
+
+	&_style_default
+		& ^[0]__list
+			display flex
+			flex-wrap wrap
+			padding 0
+			list-style none
+
+		& ^[0]__item
+			color #666
+
+			&:last-child
+				color #666
+
+				&::after
+					content none
+
+			&::after
+				display inline-block
+				margin 0 20px
+				color #999
+				content "/"
+
+		& ^[0]__link
+			display inline-block
+			color #999
+
+			&:hover
+			&:focus
+				color #666
+				text-decoration none

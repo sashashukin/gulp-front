@@ -1,0 +1,54 @@
+include ../icon/icon
+include ../close-button/close-button
+
+mixin dialog()
+	-
+		const {
+			id,
+			title,
+			style = "default",
+			close = true,
+			baseClassName = "dialog"
+		} = attributes;
+
+		const otherAttrs = _.omit(
+			["title", "style", "close", "baseClassName"],
+			attributes
+		);
+
+		const stringToArray = str => str
+			? str.split(" ").filter(v => v.length) 
+			: [];
+
+		const styles = stringToArray(style)
+			.map(s => `${baseClassName}_style_${s}`)
+
+		const classes = _.classNames(
+			[baseClassName].concat(styles)
+		);
+
+
+		if (!title) {
+			console.warn("The `title` attribute for `dialog` module is required")
+		}
+
+		const titleId = `${id}-dialog__title`;
+
+	.dialog(
+		role="dialog" 
+		aria-modal="true" 
+		aria-labelledby=titleId
+		class=classes
+	)&attributes(otherAttrs)
+		header.dialog__header
+			if title
+				h2(id=titleId).dialog__title= title
+
+			if close
+				+close-button(
+					data-micromodal-close="" 
+					title="Close this dialog window"
+				).dialog__close
+
+		block
+

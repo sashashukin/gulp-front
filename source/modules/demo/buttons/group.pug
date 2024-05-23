@@ -1,0 +1,90 @@
+include ../../button/button
+include ../../button-group/button-group
+include ../../icon/icon
+
+
++button-group()
+	+button(
+		size="normal"
+		style="solid rounded"
+		color="indigo"
+		icon
+	).button-group__item
+		+icon(name="player_previous" title="Previous track")
+
+	+button(
+		size="normal"
+		style="solid rounded"
+		color="indigo"
+		icon
+	).button-group__item
+		+icon(name="player_play" title="Play track")
+
+	+button(
+		size="normal"
+		style="solid rounded"
+		color="indigo"
+		icon
+	).button-group__item
+		+icon(name="player_pause" title="Pause track")
+
+	+button(
+		size="normal"
+		style="solid rounded"
+		color="indigo"
+		icon
+	).button-group__item
+		+icon(name="player_next" title="Next track")
+
+
++button-group()
+	+button(
+		size="normal"
+		style="solid rounded"
+		color="indigo"
+		icon
+	).button-group__item
+		+icon(name="player_previous" title="Previous track")
+		span Previous
+
+	+button(
+		size="normal"
+		style="solid rounded"
+		color="indigo"
+		icon
+	).button-group__item
+		span Next
+		+icon(name="player_next" title="Next track")
+
++button-group()
+	+button(
+		size="normal"
+		style="ghost rounded"
+		color="indigo"
+		icon
+	).button-group__item
+		+icon(name="player_previous" title="Previous track")
+
+	+button(
+		size="normal"
+		style="ghost rounded"
+		color="indigo"
+		icon
+	).button-group__item
+		+icon(name="player_play" title="Play track")
+
+	+button(
+		size="normal"
+		style="ghost rounded"
+		color="indigo"
+		icon
+	).button-group__item
+		+icon(name="player_pause" title="Pause track")
+
+	+button(
+		size="normal"
+		style="ghost rounded"
+		color="indigo"
+		icon
+	).button-group__item
+		+icon(name="player_next" title="Next track")

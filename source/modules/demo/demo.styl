@@ -1,0 +1,78 @@
+.demo
+	&_buttons
+		.button
+			margin-bottom 1em
+
+		.button + .button
+			margin-left 0.6em
+
+		.button-group
+			margin-bottom 1em
+
+			&__item
+				margin 0
+
+				&:last-child
+					margin-left -1px
+
+.demo-icons
+	.icon
+		display inline-block
+		margin 5px
+		padding 20px
+		width 34px
+		height 34px
+		box-shadow 0 1px 5px rgba(22, 20, 17, 0.16)
+
+	.flag
+		width 34px
+		height 26px
+
+		&_squared
+			width 34px
+			height 34px
+
+.demo-grid
+	display flex
+	flex-wrap wrap
+	align-items flex-end
+
+	&__item
+		margin 10px
+
+.demo-grid-item
+	display flex
+	flex-direction column
+	justify-content space-between
+	text-align center
+
+	&__container
+		display flex
+		justify-content center
+		align-items center
+		margin-bottom 1em
+		height 100%
+
+	&__title
+		color #666
+
+.card-demo
+	display flex
+	flex-wrap wrap
+	justify-content space-between
+	align-items flex-start
+
+	.card
+		margin-right 1.8em
+		margin-bottom 1.8em
+		max-width 300px
+
+		+below(960px)
+			margin-right 0
+			max-width 48%
+
+		&:nth-child(3n)
+			margin-right 0
+
+		+below(640px)
+			max-width initial

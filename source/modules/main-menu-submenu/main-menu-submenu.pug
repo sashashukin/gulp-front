@@ -1,0 +1,10 @@
+mixin main-menu-submenu(data)
+	.main-menu-submenu&attributes(attributes)
+		ul.main-menu-submenu__list
+			each item in data
+				li.main-menu-submenu__item
+					if (data.parent && item.hash)
+						a(href=`${data.parent}.html#${item.hash}`).main-menu-submenu__link= item.title
+					else
+						a(href=`${item.url}.html`).main-menu-submenu__link= item.title
+

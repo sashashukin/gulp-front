@@ -1,0 +1,38 @@
+mixin file(data)
+	-
+		let baseClassName = "file";
+
+		const {
+			style = "default",
+			disabled: disabledAttr,
+			block: blockAttr,
+			class: className
+		} = attributes;
+
+		const otherAttrs = _.omit(
+			["color", "size", "style", "icon", "block", "class", "type"],
+			attributes
+		);
+
+		const stringToArray = str => str
+			? str.split(" ").filter(v => v.length) 
+			: [];
+
+		const styles = stringToArray(style)
+			.map(s => `${baseClassName}_style_${s}`)
+
+		const classes = _.classNames(
+			[
+				baseClassName,
+				blockAttr ? `${baseClassName}_block`: `${baseClassName}_inline`,
+				{
+					[`${baseClassName}_icon`]: icon,
+					[`${baseClassName}_color_${color}`]: color,
+					[`${baseClassName}_size_${size}`]: size,
+					[`${baseClassName}_disabled`]: disabledAttr,
+				}
+			].concat(styles, className)
+		);
+
+	label(class=classes for=attributes.id)
+		input(type="file")&attributes(otherAttrs).form-control.form-control_type_file.file__control

@@ -1,0 +1,47 @@
+include ../label/label
+
+mixin form-item(data)
+	-
+		const baseClassName = "form-item";
+		const {
+			style,
+			label,
+			for: htmlFor,
+			errors,
+			hint,
+			color
+		} = attributes;
+
+		const otherAttrs = _.omit(
+			["style", "label", "for", "errors", "hint", "color"],
+			attributes
+		);
+
+		const stringToArray = str => str
+			? str.split(" ").filter(v => v.length) 
+			: [];
+
+		const styles = stringToArray(style)
+			.map(s => `${baseClassName}_style_${s}`)
+
+		const classes = _.classNames(
+			{ [`${baseClassName}_error`]: errors },
+			{ [`${baseClassName}_color_${color}`]: color },
+			[baseClassName].concat(styles)
+		);
+
+	div(class=classes)&attributes(otherAttrs)
+		if label
+			.form-item__label
+				+label(for=htmlFor)= label
+
+		.form-item__control
+			block
+
+		if hint
+			.form-item__helper-text= hint
+
+		if errors
+			ul.form-item__errors
+				each error in errors
+					li= error
